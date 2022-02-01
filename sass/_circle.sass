@@ -131,8 +131,6 @@
 		height: 432px
 		width: 432px
 		+r(960)
-			opacity: 0
-			transition: opacity 0.25s
 			-webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 1) 0)
 			mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 1) 0)
 
@@ -141,6 +139,10 @@
 		display: block
 		height: 100%
 		width: 100%
+		+r(960)
+			transform: scale(0)
+			opacity: 0
+			transition: transform 0.7s, opacity 0.5s
 
 	&__gas
 		position: absolute
@@ -195,8 +197,9 @@
 			+r(960)
 				transform: none
 		&.is-active
-			#{$this}__fire
+			#{$this}__fire-inner
 				+r(960)
+					transform: scale(1)
 					opacity: 1
 
 	&_strom

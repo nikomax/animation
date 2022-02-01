@@ -264,8 +264,6 @@ body {
 }
 @media only screen and (min-width: 960px) {
   .i-circle__fire {
-    opacity: 0;
-    transition: opacity 0.25s;
     -webkit-mask-image: linear-gradient(90deg, transparent 0, black 0);
     mask-image: linear-gradient(90deg, transparent 0, black 0);
   }
@@ -275,6 +273,13 @@ body {
   display: block;
   height: 100%;
   width: 100%;
+}
+@media only screen and (min-width: 960px) {
+  .i-circle__fire-inner {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.7s, opacity 0.5s;
+  }
 }
 .i-circle__gas {
   position: absolute;
@@ -341,7 +346,8 @@ body {
   }
 }
 @media only screen and (min-width: 960px) {
-  .i-circle_gas.is-active .i-circle__fire {
+  .i-circle_gas.is-active .i-circle__fire-inner {
+    transform: scale(1);
     opacity: 1;
   }
 }

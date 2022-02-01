@@ -44,9 +44,9 @@ window.onload = () => {
 					}
 				}
 			})
-				.fromTo('.i-circle__bg', {scale: 2}, {scale: 1, clearProps:"all"}, 0)
-				.fromTo('.js-circle-strom', {x: -323}, {x: -123, clearProps:"all"}, 0)
-				.fromTo('.js-circle-gas', {x: 323}, {x: 123, clearProps:"all"}, 0)
+				.fromTo('.i-circle__bg', {scale: 2}, {scale: 1}, 0)
+				.fromTo('.js-strom-wrapper', {x: -200}, {x: 0}, 0)
+				.fromTo('.js-gas-wrapper', {x: 200}, {x: 0}, 0)
 
 			gsap.timeline({
 				defaults: { force3D: true, willChange: "transform, opacity, mask-image" },
