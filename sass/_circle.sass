@@ -139,29 +139,20 @@
 		display: block
 		height: 100%
 		width: 100%
+		will-change: transform
 		+r(960)
 			transform: scale(0)
 			opacity: 0
 			transition: transform 1.7s, opacity 1.3s
 			transition-delay: 0.5s
 
-	&__gas
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		height: 100%
-
 	&__gas-fire
-		position: absolute
-		top: 0
-		left: 0
-		bottom: 0
-		right: 0
-		margin: auto
 		height: 100%
 		width: 100%
+		will-change: transform
 		animation: rotate 60s infinite linear
+		+r(960)
+			animation-name: none
 
 	&__gas-subfire
 		opacity: 0.25
@@ -198,6 +189,9 @@
 			+r(960)
 				transform: none
 		&.is-active
+			#{$this}__gas-fire
+				+r(960)
+					animation-name: rotate
 			#{$this}__fire-inner
 				+r(960)
 					transform: scale(1)

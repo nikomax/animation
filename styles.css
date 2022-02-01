@@ -273,6 +273,7 @@ body {
   display: block;
   height: 100%;
   width: 100%;
+  will-change: transform;
 }
 @media only screen and (min-width: 960px) {
   .i-circle__fire-inner {
@@ -282,23 +283,16 @@ body {
     transition-delay: 0.5s;
   }
 }
-.i-circle__gas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 .i-circle__gas-fire {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
   height: 100%;
   width: 100%;
+  will-change: transform;
   animation: rotate 60s infinite linear;
+}
+@media only screen and (min-width: 960px) {
+  .i-circle__gas-fire {
+    animation-name: none;
+  }
 }
 .i-circle__gas-subfire {
   opacity: 0.25;
@@ -344,6 +338,11 @@ body {
 @media only screen and (min-width: 960px) {
   .i-circle_gas .i-circle__title {
     transform: none;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .i-circle_gas.is-active .i-circle__gas-fire {
+    animation-name: rotate;
   }
 }
 @media only screen and (min-width: 960px) {
