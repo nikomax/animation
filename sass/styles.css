@@ -211,7 +211,6 @@ body {
   height: 160px;
   background: #0E70E3;
   opacity: 0.5;
-  filter: blur(48px);
   z-index: -2;
   transform-origin: 50% 50%;
   transition: height 0.5s linear, width 0.5s linear;
