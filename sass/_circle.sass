@@ -131,6 +131,8 @@
 		height: 432px
 		width: 432px
 		+r(960)
+			opacity: 0
+			transition: opacity 0.25s
 			-webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 1) 0)
 			mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 1) 0)
 
@@ -192,6 +194,10 @@
 			transform: translateX(10px)
 			+r(960)
 				transform: none
+		&.is-active
+			#{$this}__fire
+				+r(960)
+					opacity: 1
 
 	&_strom
 		transform: translateX(37px)
@@ -201,12 +207,19 @@
 			img
 				will-change: transform, opacity
 				animation: rays 4s infinite linear
+				+r(960)
+					animation-name: none
 			&_second img
 				animation-delay: 1s
 			&_third img
 				animation-delay: 2s
 			&_fourth img
 				animation-delay: 3s
+		&.is-active
+			.rays__circle
+				img
+					+r(960)
+						animation-name: rays
 
 .rays
 	&__line

@@ -20,7 +20,7 @@
             <img class="i-section__bg-img" src="img/color.png" alt="Circles">
         </div>
         <div class="i-section__container">
-            <div class="i-section__content">
+            <div class="i-section__content i-section__content_top js-text-top">
                 <h2 class="i-section__title">Geborgenheit lorem ipsum dolor</h2>
                 <div class="i-section__text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna venenatis, eu nisl morbi mauris purus. Viverra volutpat in sed nulla.
@@ -130,9 +130,22 @@
                         Sichere dir jetzt
                         deinen dauerhaften Kombivorteil
                     </div>
-                    <div class="panel__btn">
-                        <a href="#" class="btn">zum Kundenportal</a>
+                    <div class="panel__switcher">
+                        <div class="switcher">
+                            <button class="switcher__btn is-active js-switcher-btn" data-index="1">Ich bin Kunde</button>
+                            <button class="switcher__btn js-switcher-btn" data-index="2">Ich bin kein Kunde</button>
+                        </div>
                     </div>
+                    <div class="panel__btn">
+                        <a href="#" class="btn js-panel-btn is-active" data-index="1">zum Kundenportal</a>
+                        <a href="#" class="btn js-panel-btn" data-index="2">zum Tarifrechner</a>
+                    </div>
+                </div>
+            </div>
+            <div class="i-section__content i-section__content_bottom js-text-bottom">
+                <h2 class="i-section__title">Changed title</h2>
+                <div class="i-section__text">
+                    Changed text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna venenatis, eu nisl morbi mauris purus. Viverra volutpat in sed nulla.
                 </div>
             </div>
         </div>
