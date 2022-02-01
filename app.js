@@ -19,6 +19,7 @@ window.onload = () => {
 	ScrollTrigger.matchMedia({
 		'(min-width: 960px)': () => {
 			gsap.timeline({
+				defaults: { willChange: "transform" },
 				ease: 'Power1.easeInOut',
 				scrollTrigger: {
 					trigger: '.js-container',
@@ -49,7 +50,7 @@ window.onload = () => {
 				.fromTo('.js-gas-wrapper', {x: 200}, {x: 0}, 0)
 
 			gsap.timeline({
-				defaults: { force3D: true, willChange: "transform, opacity, mask-image" },
+				defaults: { willChange: "transform, opacity" },
 				ease: 'Power1.easeInOut',
 				scrollTrigger: {
 					trigger: '.js-container',
@@ -62,10 +63,10 @@ window.onload = () => {
 				.to('.js-plus', {opacity: 0}, 0)
 				.to('.js-circle-strom', {x: 37, duration: 0.5}, 0)
 				.to('.js-circle-gas', {x: -37, duration: 0.5}, 0)
-				.to('.js-circles', {scale: 1, opacity: 0, duration: 0.5}, 0)
-				.to('.js-bg', {opacity: 1, duration: 0.5}, 0)
-				.to('.js-fire', {maskImage: 'linear-gradient(90deg, transparent 30%, rgba(0, 0, 0, 1) 60%)', duration: 0.5}, 0)
-				.to('.js-rays', {maskImage: 'linear-gradient(-90deg, transparent 30%, rgba(0, 0, 0, 1) 60%)', duration: 0.5}, 0)
+				.to('.js-circles', {scale: 1, opacity: 0, duration: 0.3}, 0)
+				.to('.js-fire', {maskImage: 'linear-gradient(90deg, transparent 30%, rgba(0, 0, 0, 1) 60%)', duration: 0.2}, 0)
+				.to('.js-rays', {maskImage: 'linear-gradient(-90deg, transparent 30%, rgba(0, 0, 0, 1) 60%)', duration: 0.2}, 0)
+				.to('.js-bg', {opacity: 1, duration: 0.3}, 0.3)
 				.to('.js-overwrap', {x: 0, duration: 0.25}, 0.25)
 				.to('.js-strom-title', {x: -20}, 0.3)
 				.to('.js-gas-title', {x: 10}, 0.3)
