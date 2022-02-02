@@ -48,6 +48,7 @@ window.onload = () => {
 				.fromTo('.i-circle__bg', {scale: 2}, {scale: 1}, 0)
 				.fromTo('.js-strom-wrapper', {x: -200}, {x: 0}, 0)
 				.fromTo('.js-gas-wrapper', {x: 200}, {x: 0}, 0)
+				.to('.js-circles', {scale: 1, opacity: 0, duration: 0.3}, 0)
 
 			gsap.timeline({
 				defaults: { willChange: "transform, opacity" },
@@ -63,7 +64,7 @@ window.onload = () => {
 				.to('.js-plus', {opacity: 0}, 0)
 				.to('.js-circle-strom', {x: 37, duration: 0.5}, 0)
 				.to('.js-circle-gas', {x: -37, duration: 0.5}, 0)
-				.to('.js-circles', {scale: 1, opacity: 0, duration: 0.3}, 0)
+				// .to('.js-circles', {scale: 1, opacity: 0, duration: 0.3}, 0)
 				.to('.js-fire', {maskImage: 'linear-gradient(90deg, transparent 30%, rgba(0, 0, 0, 1) 60%)', duration: 0.2}, 0)
 				.to('.js-rays', {maskImage: 'linear-gradient(-90deg, transparent 30%, rgba(0, 0, 0, 1) 60%)', duration: 0.2}, 0)
 				.to('.js-bg', {opacity: 1, duration: 0.3}, 0.3)
