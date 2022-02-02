@@ -485,6 +485,10 @@ body {
   background-color: #FFFFFF;
 }
 
+.page {
+  overflow: hidden;
+}
+
 .i-section {
   width: 100%;
   padding: 64px 0 112px;
