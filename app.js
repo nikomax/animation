@@ -1,8 +1,8 @@
 gsap.registerPlugin(ScrollTrigger);
 const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-const isMacOS = /(Mac)/i.test(navigator.platform);
+const isMacOS = /(Mac)/i.test(navigator.platform) && !('ontouchend' in document);
 const isAndroid = /(android)/i.test(navigator.userAgent);
-const isIpad = /iPad|iPhone|iPod/.test(navigator.platform);
+const isIpad = /iPad|iPhone|iPod/.test(navigator.platform) || (/(Mac)/i.test(navigator.platform) && 'ontouchend' in document);
 console.log('isChrome ', isChrome);
 console.log('isMacOS ', isMacOS);
 console.log('isAndroid ', isAndroid);
