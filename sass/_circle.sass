@@ -196,6 +196,10 @@
 				+r(960)
 					transform: scale(1)
 					opacity: 1
+		&.is-static
+			#{$this}__gas-fire
+				+r(960)
+					animation-name: none
 
 	&_strom
 		transform: translateX(37px)
@@ -218,6 +222,11 @@
 				img
 					+r(960)
 						animation-name: rays
+		&.is-static
+			.rays__circle
+				img
+					+r(960)
+						animation-name: none
 
 .rays
 	&__line
@@ -238,6 +247,18 @@
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
+		.is-static &
+			img
+				transform: translateY(-85px)
+		&_third
+			.is-static &
+				img
+					transform: translateY(-140px)
+					opacity: 0.3
 		&_second, &_fourth
 			transform-origin: center
 			transform: rotate(15deg)
+			.is-static &
+				img
+					transform: translateY(-105px)
+					opacity: 0.6

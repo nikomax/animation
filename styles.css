@@ -351,6 +351,11 @@ body {
     opacity: 1;
   }
 }
+@media only screen and (min-width: 960px) {
+  .i-circle_gas.is-static .i-circle__gas-fire {
+    animation-name: none;
+  }
+}
 .i-circle_strom {
   transform: translateX(37px);
 }
@@ -380,6 +385,11 @@ body {
 @media only screen and (min-width: 960px) {
   .i-circle_strom.is-active .rays__circle img {
     animation-name: rays;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .i-circle_strom.is-static .rays__circle img {
+    animation-name: none;
   }
 }
 
@@ -437,9 +447,20 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.is-static .rays__circle img {
+  transform: translateY(-85px);
+}
+.is-static .rays__circle_third img {
+  transform: translateY(-140px);
+  opacity: 0.3;
+}
 .rays__circle_second, .rays__circle_fourth {
   transform-origin: center;
   transform: rotate(15deg);
+}
+.is-static .rays__circle_second img, .is-static .rays__circle_fourth img {
+  transform: translateY(-105px);
+  opacity: 0.6;
 }
 
 .btn {

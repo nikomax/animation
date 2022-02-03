@@ -8,15 +8,21 @@ console.log('isMacOS ', isMacOS);
 console.log('isAndroid ', isAndroid);
 console.log('isIpad ', isIpad);
 
-if (isChrome && isMacOS) {
-	document.querySelector('.js-circles').innerHTML = '';
-}
-
 ScrollTrigger.saveStyles('.js-circle-strom, .js-circle-gas, .js-overwrap, .js-heart, .js-fire, .js-rays, .js-strom-title, .js-gas-title, .js-panel, .js-bg, .js-plus, .js-circles, .js-text-top, .js-text-bottom, .i-circle__bg, .js-strom-wrapper, .js-gas-wrapper');
 
-window.onload = () => {
+const ready = () => {
 	const strom = document.querySelector('.js-circle-strom');
 	const gas = document.querySelector('.js-circle-gas');
+
+	if (isChrome && isMacOS) {
+		document.querySelector('.js-circles').innerHTML = ''; // removes big animated circles for macOS Chrome browser
+	}
+
+	if (isIpad) { // sets static classes for main circles on iPad
+		strom.classList.add('is-static');
+		gas.classList.add('is-static');
+	}
+
 	const switchers = document.querySelectorAll('.js-switcher-btn');
 	const buttons = document.querySelectorAll('.js-panel-btn');
 	switchers.forEach(switcher => {
@@ -28,8 +34,20 @@ window.onload = () => {
 			document.querySelector(`.js-panel-btn[data-index="${index}"]`).classList.add('is-active');
 		})
 	})
+
 	ScrollTrigger.matchMedia({
+		'(max-width: 959px)': () => {
+			if (isAndroid) {
+				strom.classList.remove('is-static');
+				gas.classList.remove('is-static');
+			}
+		},
 		'(min-width: 960px)': () => {
+			if (isAndroid) { // sets static classes for main circles on isAndroid if window width more than 960px oe equals
+				strom.classList.add('is-static');
+				gas.classList.add('is-static');
+			}
+
 			gsap.timeline({
 				defaults: { willChange: "transform" },
 				ease: 'none',
@@ -81,3 +99,5 @@ window.onload = () => {
 		}
 	})
 }
+
+document.addEventListener("DOMContentLoaded", ready);
