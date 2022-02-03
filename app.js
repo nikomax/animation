@@ -2,16 +2,17 @@ gsap.registerPlugin(ScrollTrigger);
 const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 const isMacOS = /(Mac)/i.test(navigator.platform) && !('ontouchend' in document);
 const isAndroid = /(android)/i.test(navigator.userAgent);
-const isIpad = /iPad|iPhone|iPod/.test(navigator.platform) || (/(Mac)/i.test(navigator.platform) && 'ontouchend' in document);
+const isIpad = /iPad/.test(navigator.platform) || (/(Mac)/i.test(navigator.platform) && 'ontouchend' in document);
 
 ScrollTrigger.saveStyles('.js-circle-strom, .js-circle-gas, .js-overwrap, .js-heart, .js-fire, .js-rays, .js-strom-title, .js-gas-title, .js-panel, .js-bg, .js-plus, .js-circles, .js-text-top, .js-text-bottom, .i-circle__bg, .js-strom-wrapper, .js-gas-wrapper');
 
 const ready = () => {
 	const strom = document.querySelector('.js-circle-strom');
 	const gas = document.querySelector('.js-circle-gas');
+	const circles = document.querySelector('.js-circles');
 
-	if (isChrome && isMacOS) {
-		document.querySelector('.js-circles').innerHTML = ''; // removes big animated circles for macOS Chrome browser
+	if (isChrome && isMacOS || isAndroid || isIpad) {
+		circles.innerHTML = ''; // removes big animated circles for macOS Chrome browser, android and iPad
 	}
 
 	if (isIpad) { // sets static classes for main circles on iPad
@@ -66,7 +67,6 @@ const ready = () => {
 				.fromTo('.i-circle__bg', {scale: 2}, {scale: 1}, 0)
 				.fromTo('.js-strom-wrapper', {x: -200}, {x: 0}, 0)
 				.fromTo('.js-gas-wrapper', {x: 200}, {x: 0}, 0)
-				.to('.js-circles', {scale: 1, opacity: 0, duration: 0.3}, 0)
 
 			gsap.timeline({
 				defaults: { willChange: "transform, opacity" },
@@ -84,6 +84,7 @@ const ready = () => {
 				.to('.js-circle-gas', {x: -37, duration: 2}, 0)
 				.to('.js-fire', {maskImage: 'linear-gradient(90deg, transparent 30%, rgba(0, 0, 0, 1) 60%)', duration: 0.8}, 0)
 				.to('.js-rays', {maskImage: 'linear-gradient(-90deg, transparent 30%, rgba(0, 0, 0, 1) 60%)', duration: 0.8}, 0)
+				.to('.js-circles', {scale: 1, opacity: 0, duration: 0.8}, 0)
 				.to('.js-bg', {opacity: 1, duration: 1.2}, 1.2)
 				.to('.js-overwrap', {x: 0, duration: 1}, 1.03)
 				.to('.js-strom-title', {x: -20}, 1.2)
