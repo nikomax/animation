@@ -3,10 +3,6 @@ const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigat
 const isMacOS = /(Mac)/i.test(navigator.platform) && !('ontouchend' in document);
 const isAndroid = /(android)/i.test(navigator.userAgent);
 const isIpad = /iPad|iPhone|iPod/.test(navigator.platform) || (/(Mac)/i.test(navigator.platform) && 'ontouchend' in document);
-console.log('isChrome ', isChrome);
-console.log('isMacOS ', isMacOS);
-console.log('isAndroid ', isAndroid);
-console.log('isIpad ', isIpad);
 
 ScrollTrigger.saveStyles('.js-circle-strom, .js-circle-gas, .js-overwrap, .js-heart, .js-fire, .js-rays, .js-strom-title, .js-gas-title, .js-panel, .js-bg, .js-plus, .js-circles, .js-text-top, .js-text-bottom, .i-circle__bg, .js-strom-wrapper, .js-gas-wrapper');
 

@@ -351,10 +351,8 @@ body {
     opacity: 1;
   }
 }
-@media only screen and (min-width: 960px) {
-  .i-circle_gas.is-static .i-circle__gas-fire {
-    animation-name: none;
-  }
+.i-circle_gas.is-static .i-circle__gas-fire {
+  animation-name: none;
 }
 .i-circle_strom {
   transform: translateX(37px);
@@ -387,10 +385,8 @@ body {
     animation-name: rays;
   }
 }
-@media only screen and (min-width: 960px) {
-  .i-circle_strom.is-static .rays__circle img {
-    animation-name: none;
-  }
+.i-circle_strom.is-static .rays__circle img {
+  animation-name: none;
 }
 
 .rays__line {
