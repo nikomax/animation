@@ -27,10 +27,6 @@ window.onload = () => {
 					start: 'top center',
 					end: 'top top',
 					scrub: true,
-					onEnter: () => {
-						strom.classList.remove('is-active');
-						gas.classList.remove('is-active');
-					},
 					onEnterBack: () => {
 						strom.classList.add('is-active');
 						gas.classList.add('is-active');
@@ -38,10 +34,6 @@ window.onload = () => {
 					onLeave: () => {
 						strom.classList.add('is-active');
 						gas.classList.add('is-active');
-					},
-					onLeaveBack: () => {
-						strom.classList.remove('is-active');
-						gas.classList.remove('is-active');
 					}
 				}
 			})
@@ -68,7 +60,7 @@ window.onload = () => {
 				.to('.js-fire', {maskImage: 'linear-gradient(90deg, transparent 30%, rgba(0, 0, 0, 1) 60%)', duration: 0.8}, 0)
 				.to('.js-rays', {maskImage: 'linear-gradient(-90deg, transparent 30%, rgba(0, 0, 0, 1) 60%)', duration: 0.8}, 0)
 				.to('.js-bg', {opacity: 1, duration: 1.2}, 1.2)
-				.to('.js-overwrap', {x: 0, duration: 1}, 1.02)
+				.to('.js-overwrap', {x: 0, duration: 1}, 1.03)
 				.to('.js-strom-title', {x: -20}, 1.2)
 				.to('.js-gas-title', {x: 10}, 1.2)
 				.to('.js-text-top', {opacity: 0, duration: 0.1}, 1.5)
