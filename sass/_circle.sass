@@ -141,19 +141,12 @@
 		height: 100%
 		width: 100%
 		will-change: transform
-		+r(960)
-			transform: scale(0)
-			opacity: 0
-			transition: transform 1.7s, opacity 1.3s
-			transition-delay: 0.5s
 
 	&__gas-fire
 		height: 100%
 		width: 100%
 		will-change: transform
 		animation: rotate 60s infinite linear
-		+r(960)
-			animation-name: none
 
 	&__gas-subfire
 		opacity: 0.25
@@ -189,14 +182,6 @@
 			transform: translateX(10px)
 			+r(960)
 				transform: none
-		&.is-active
-			#{$this}__gas-fire
-				+r(960)
-					animation-name: rotate
-			#{$this}__fire-inner
-				+r(960)
-					transform: scale(1)
-					opacity: 1
 
 	&_strom
 		transform: translateX(37px)
@@ -206,19 +191,12 @@
 			img
 				will-change: transform, opacity
 				animation: rays 4s infinite linear
-				+r(960)
-					animation-name: none
 			&_second img
 				animation-delay: 1s
 			&_third img
 				animation-delay: 2s
 			&_fourth img
 				animation-delay: 3s
-		&.is-active
-			.rays__circle
-				img
-					+r(960)
-						animation-name: rays
 
 .rays
 	&__line

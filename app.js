@@ -26,15 +26,7 @@ window.onload = () => {
 					pin: false,
 					start: 'top center',
 					end: 'top top',
-					scrub: true,
-					onEnterBack: () => {
-						strom.classList.add('is-active');
-						gas.classList.add('is-active');
-					},
-					onLeave: () => {
-						strom.classList.add('is-active');
-						gas.classList.add('is-active');
-					}
+					scrub: true
 				}
 			})
 				.fromTo('.i-circle__bg', {scale: 2}, {scale: 1}, 0)
