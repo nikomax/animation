@@ -4,16 +4,16 @@
 	position: relative
 	z-index: 1
 	&__circles
-		z-index: -3
-		display: block
-		position: absolute
-		top: 50%
-		left: 50%
-		transform: translate(-50%, -50%)
-		height: 678px
-		width: 678px
-		will-change: transform, opacity
+		display: none
 		+r(960)
+			z-index: -3
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			height: 678px
+			width: 678px
+			will-change: transform, opacity
 			transform: translate(-50%, -50%) scale(1.6)
 		+r(1280)
 			transform: translate(-50%, -50%) scale(2)
@@ -111,7 +111,6 @@
 		right: 13px
 		+r(960)
 			opacity: 0
-			transform: translateY(-50%) scale(0)
 	&__title
 		font-weight: 700
 		font-size: 24px
@@ -141,12 +140,19 @@
 		height: 100%
 		width: 100%
 		will-change: transform
+		+r(960)
+			transform: scale(0)
+			opacity: 0
+			transition: transform 1.7s, opacity 1.3s
+			transition-delay: 0.5s
 
 	&__gas-fire
 		height: 100%
 		width: 100%
 		will-change: transform
 		animation: rotate 60s infinite linear
+		+r(960)
+			animation-name: none
 
 	&__gas-subfire
 		opacity: 0.25
@@ -182,6 +188,14 @@
 			transform: translateX(10px)
 			+r(960)
 				transform: none
+		&.is-active
+			#{$this}__gas-fire
+				+r(960)
+					animation-name: rotate
+			#{$this}__fire-inner
+				+r(960)
+					transform: scale(1)
+					opacity: 1
 
 	&_strom
 		transform: translateX(37px)
@@ -191,12 +205,19 @@
 			img
 				will-change: transform, opacity
 				animation: rays 4s infinite linear
+				+r(960)
+					animation-name: none
 			&_second img
 				animation-delay: 1s
 			&_third img
 				animation-delay: 2s
 			&_fourth img
 				animation-delay: 3s
+		&.is-active
+			.rays__circle
+				img
+					+r(960)
+						animation-name: rays
 
 .rays
 	&__line

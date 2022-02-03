@@ -100,18 +100,18 @@ body {
   z-index: 1;
 }
 .i-circles__circles {
-  z-index: -3;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 678px;
-  width: 678px;
-  will-change: transform, opacity;
+  display: none;
 }
 @media only screen and (min-width: 960px) {
   .i-circles__circles {
+    z-index: -3;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 678px;
+    width: 678px;
+    will-change: transform, opacity;
     transform: translate(-50%, -50%) scale(1.6);
   }
 }
@@ -237,7 +237,6 @@ body {
 @media only screen and (min-width: 960px) {
   .i-circle__heart {
     opacity: 0;
-    transform: translateY(-50%) scale(0);
   }
 }
 .i-circle__title {
@@ -276,11 +275,24 @@ body {
   width: 100%;
   will-change: transform;
 }
+@media only screen and (min-width: 960px) {
+  .i-circle__fire-inner {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 1.7s, opacity 1.3s;
+    transition-delay: 0.5s;
+  }
+}
 .i-circle__gas-fire {
   height: 100%;
   width: 100%;
   will-change: transform;
   animation: rotate 60s infinite linear;
+}
+@media only screen and (min-width: 960px) {
+  .i-circle__gas-fire {
+    animation-name: none;
+  }
 }
 .i-circle__gas-subfire {
   opacity: 0.25;
@@ -328,6 +340,17 @@ body {
     transform: none;
   }
 }
+@media only screen and (min-width: 960px) {
+  .i-circle_gas.is-active .i-circle__gas-fire {
+    animation-name: rotate;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .i-circle_gas.is-active .i-circle__fire-inner {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .i-circle_strom {
   transform: translateX(37px);
 }
@@ -340,6 +363,11 @@ body {
   will-change: transform, opacity;
   animation: rays 4s infinite linear;
 }
+@media only screen and (min-width: 960px) {
+  .i-circle_strom .rays__circle img {
+    animation-name: none;
+  }
+}
 .i-circle_strom .rays__circle_second img {
   animation-delay: 1s;
 }
@@ -348,6 +376,11 @@ body {
 }
 .i-circle_strom .rays__circle_fourth img {
   animation-delay: 3s;
+}
+@media only screen and (min-width: 960px) {
+  .i-circle_strom.is-active .rays__circle img {
+    animation-name: rays;
+  }
 }
 
 .rays__line {
